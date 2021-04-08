@@ -1,5 +1,6 @@
 FROM newtmitch/sonar-scanner:4.5
 
+
 LABEL "com.github.actions.name"="SonarQube Scan"
 LABEL "com.github.actions.description"="Scan your code with SonarQube Scanner to detect bugs, vulnerabilities and code smells in more than 25 programming languages."
 LABEL "com.github.actions.icon"="check"
@@ -20,5 +21,7 @@ ENV NODE_PATH "/usr/lib/node_modules/"
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
+
+RUN cat /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
