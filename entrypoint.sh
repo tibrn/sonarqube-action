@@ -20,14 +20,10 @@ if [[ ! -f "${GITHUB_WORKSPACE}/sonar-project.properties" ]]; then
     -Dsonar.password=${SONAR_PASSWORD} \
     -Dsonar.sources=. \
     -Dsonar.sourceEncoding=UTF-8
-    -Dsonar.ws.timeout=300
-    -Dsonar.projectBaseDir=.
 else
   sonar-scanner -X \
     -Dsonar.host.url=${INPUT_HOST} \
     -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     -Dsonar.login=${INPUT_LOGIN} \
     -Dsonar.password=${SONAR_PASSWORD}
-    -Dsonar.ws.timeout=300
-    -Dsonar.projectBaseDir=.
 fi
