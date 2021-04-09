@@ -4,6 +4,8 @@ set -e
 
 ls -lh | echo $1
 
+echo "Run action"
+
 REPOSITORY_NAME=$(basename "${GITHUB_REPOSITORY}")
 
 [[ ! -z ${INPUT_PASSWORD} ]] && SONAR_PASSWORD="${INPUT_PASSWORD}" || SONAR_PASSWORD=""
