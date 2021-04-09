@@ -2,6 +2,8 @@
 
 set -e
 
+ls -lh
+
 REPOSITORY_NAME=$(basename "${GITHUB_REPOSITORY}")
 
 [[ ! -z ${INPUT_PASSWORD} ]] && SONAR_PASSWORD="${INPUT_PASSWORD}" || SONAR_PASSWORD=""
