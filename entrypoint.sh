@@ -2,8 +2,6 @@
 
 set -e
 
-ls -lha /github/workspace 
-
 echo "Run action"
 
 REPOSITORY_NAME=$(basename "${GITHUB_REPOSITORY}")
@@ -24,10 +22,14 @@ if [[ ! -f "${GITHUB_WORKSPACE}/sonar-project.properties" ]]; then
     -Dsonar.password=${SONAR_PASSWORD} \
     -Dsonar.sources=. \
     -Dsonar.sourceEncoding=UTF-8
+    -Dsonar.go.tests.reportPaths=report.json
+    -Dsonar.go.coverage.reportPaths=coverage.out
 else
   sonar-scanner -X \
     -Dsonar.host.url=${INPUT_HOST} \
     -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     -Dsonar.login=${INPUT_LOGIN} \
     -Dsonar.password=${SONAR_PASSWORD}
+    -Dsonar.go.tests.reportPaths=report.json
+    -Dsonar.go.coverage.reportPaths=coverage.out
 fi
