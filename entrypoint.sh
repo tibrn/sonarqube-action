@@ -2,7 +2,7 @@
 
 set -e
 
-ls -lh | echo $1
+ls -lha | echo $1
 
 echo "Run action"
 
