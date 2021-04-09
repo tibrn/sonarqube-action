@@ -2,7 +2,7 @@
 
 set -e
 
-ls -lha
+ls -lha /github/workspace 
 
 echo "Run action"
 
