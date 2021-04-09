@@ -2,7 +2,7 @@
 
 set -e
 
-ls -lh
+echo ls -lh
 
 REPOSITORY_NAME=$(basename "${GITHUB_REPOSITORY}")
 
